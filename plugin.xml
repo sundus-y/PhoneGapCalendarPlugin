@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+        id="com.sundusy.plugin.calendar"
+        version="1.0.0">
+  <name>Calendar</name>
+  <description>PhoneGap Calendar Plugin</description>
+  <license>MIT</license>
+  <keywords>phonegap,calendar</keywords>
+
+
+  <js-module src="www/calendar.js" name="Calendar">
+    <clobbers target="window.calendar"/>
+  </js-module>
+
+  <!-- android -->
+  <platform name="android">
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="Calendar">
+        <param name="android-package" value="com.sundusy.plugin.calendar.Calendar"/>
+      </feature>
+    </config-file>
+
+    <source-file src="src/android/Calendar.java" target-dir="src/com/sundusy/plugin/calendar"/>
+  </platform>
+</plugin>
